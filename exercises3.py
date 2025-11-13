@@ -127,7 +127,20 @@ plt.show()
 #   data = {'Year': [2020, 2021, 2022, 2023], 'Sales': [150, 200, 250, 300]}
 # Plot 'Year' on the x-axis and 'Sales' on the y-axis using plt.plot().
 # Add appropriate labels and title.
+data = {
+    "Year": [2020,2021,2022,2023],
+    "Sales": [150,200,250,300]
+}
 
+df = pd.DataFrame(data)
+x = df["Year"]
+y = df["Sales"]
+
+plt.plot(x,y)
+plt.xlabel("Year")
+plt.ylabel("Sales")
+plt.title("Years and Sales graph")
+plt.show()
 
 # ==========================================
 # Final Challenge: Combining Skills
@@ -139,3 +152,12 @@ plt.show()
 #   * Axis labels and grid
 #   * Use 'viridis' colormap
 # Save the plot as 'squares_plot.png' using plt.savefig().
+x = list(range(1,21))
+y = [value**2 for value in x]
+plt.scatter(x,y, c=y, cmap = "viridis", s=50)
+plt.title("Square Numbers Visualization")
+plt.xlabel("number")
+plt.ylabel("square of number")
+plt.grid()
+plt.savefig("square_plot.png")
+plt.show()
